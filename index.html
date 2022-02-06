@@ -5,15 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>첫번째 프로젝트다~~</h1>
-    <p>예~~~~~~</p>
-    <h2>러ㅝㄷ주리ㅏ</h2>
-    <h3>ㄹ댜ㅓㅈㄹ허</h3>
-    <h5>추가추가</h5>
+    <div class="container">
+<!-- 제목 -->
+        <h1 class="pre-title">동훈이가 만든</h1>
+        <h1 class="title">숫자맞추기 게임</h1>
+        <h1 class="sub-title"><span class="red-text">UP</span>&<span class="blue-text">DOWN</span></h1>
+<!-- 결과창 -->
+        
+        <div id="result-area">
+            <img src="https://media.giphy.com/media/82V56plzMHkVfJLvvI/giphy.gif" class="main-img">
+            <h1 class="result-text">UP&DOWN 결과를 보고, 5번의 찬스 안에 숫자를 예측하세요</h1>
+        </div>
+<!-- 남은횟수 -->
+        <h2 id="chance-area" class="chance-text">남은찬스 : 5번</h2>
+        
+<!-- 인풋창 -->
+        <div class="row d-flex justify-content-center"">
+            <div class="row-md-6">
+                <input type="number" id="user-input" class="form-control mb-10" placeholder="1부터 100까지 숫자를 입력" />
+            </div>
+<!-- 고버튼 -->
+            <div class="button-margin">
+                <button class="btn btn-success mb-2 button-style" id="play-button">GO!!</button>
+            </div>
+        </div>
+    </div>
 
-    </h5>
+    <button class="btn btn-warning mt-3 button-style button-reset" id="reset-button">리셋</button>
+
+    <script src="main.js"></script>
   </body>
 </html>
