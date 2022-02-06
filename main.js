@@ -15,14 +15,16 @@ let resetButton = document.querySelector(".button-reset");
 let userInput = document.querySelector("#user-input");
 let resultAreaImg = document.querySelector(".main-img");
 let resultText = document.querySelector(".result-text");
-let chances = 5;
+let chances = 6;
 let gameOver = false;
-let history = [];
+let wellDone = false;
+let userValueList = [];
 
 chanceArea.innerHTML = `남은 찬스 : ${chances}`;
 playButton.addEventListener("click", play);
 resetButton.addEventListener("click", reset);
 userInput.addEventListener("focus", focusInput);
+
 
 function pickRandomNum() {
   computerNum = Math.floor(Math.random() * 100) + 1;
@@ -30,21 +32,22 @@ function pickRandomNum() {
 }
 
 function play() {
-  const userValue = userInput.value;
+  let userValue = userInput.value;
 
   if (userValue < 1 || userValue > 100) {
     resultText.textContent = "1~100 사이의 숫자를 입력하세요";
     return;
   }
 
-  if (history.includes(userValue)) {
+  if (userValueList.includes(userValue)) {
     resultText.textContent = "이미 입력한 숫자입니다. 다른 숫자를 입력해주세요";
     return;
   }
 
   chances--;
   chanceArea.innerHTML = `남은 찬스 : ${chances}`;
-  history.push(userValue);
+  userValueList.push(userValue);
+  console.log(userValueList)
 
   if (userValue < computerNum) {
     resultAreaImg.src =
@@ -57,10 +60,11 @@ function play() {
     resultAreaImg.src =
       "https://media.giphy.com/media/kBZBlLVlfECvOQAVno/giphy.gif";
     resultText.textContent = "정답입니다";
-    gameOver = true;
+    wellDone = true;
   }
 
   if (chances < 1) {
+    resultText.textContent = "실패했습니다! 리셋 버튼을 눌러 다시 도전하세요";
     gameOver = true;
   }
 
@@ -69,24 +73,23 @@ function play() {
     "https://media.giphy.com/media/1lvvpG7Xa5LGQa06dJ/giphy.gif";
     playButton.disabled = true;
   }
-
-  if (userValue < 1 || userValue > 100) {
-  }
 }
 
 function reset() {
-  //리셋
-  pickRandomNum();
-  userInput.value = "";
-  resultAreaImg.src =
-    "https://media.giphy.com/media/82V56plzMHkVfJLvvI/giphy.gif";
-  resultText.textContent = "UP&DOWN 결과를 보고, 5번의 찬스 안에 숫자를 예측하세요";
-  gameOver = false;
-  playButton.disabled = false;
-  chances = 5;
-  chanceArea.innerHTML = `남은 찬스 : ${chances}`;
-  userValueList = [];
-}
+    //리셋
+    pickRandomNum();
+    userValueList.value = "";
+    userInput.value = "";
+    resultAreaImg.src =
+      "https://media.giphy.com/media/82V56plzMHkVfJLvvI/giphy.gif";
+    resultText.textContent = "UP&DOWN 결과를 보고, 6번의 찬스 안에 숫자를 예측하세요";
+    gameOver = false;
+    playButton.disabled = false;
+    chances = 6;
+    chanceArea.innerHTML = `남은 찬스 : ${chances}`;
+    userValueList = [];
+  }
+  
 
 function focusInput() {
   userInput.value = "";
