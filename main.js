@@ -79,7 +79,7 @@ function reset() {
   pickRandomNum();
   userInput.value = "";
   resultAreaImg.src =
-    "https://media1.giphy.com/media/9DinPR8bzFsmf74j9W/giphy.gif";
+    "https://media.giphy.com/media/82V56plzMHkVfJLvvI/giphy.gif";
   resultText.textContent = "UP&DOWN 결과를 보고, 5번의 찬스 안에 숫자를 예측하세요";
   gameOver = false;
   playButton.disabled = false;

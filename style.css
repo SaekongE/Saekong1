@@ -13,6 +13,7 @@ body {
   align-items: center;
   font-family: "BMJUA";
   background-image: url(image/main.jpg);
+  margin: 1%;
 }
 
 .container {
@@ -21,6 +22,7 @@ body {
   text-align: center;
   background-color: rgba(247, 243, 242, 0.7);
   padding: 40px;
+  margin-bottom: 30px;
 }
 
 .section {
@@ -51,14 +53,14 @@ body {
 }
 
 .pre-title {
-  font-size: 5vw;
+  font-size: 3vw;
   color: rgb(195, 0, 255);
 }
 .title {
-  font-size: 6vw;
+  font-size: 3vw;
 }
 .sub-title {
-  font-size: 4vw;
+  font-size: 2vw;
 }
 
 .red-text {
@@ -70,21 +72,25 @@ body {
 }
 
 .result-text {
-  font-size: 3vw;
+  font-size: 1vw;
   margin-top: 20px;
 }
 
 .chance-text {
-  font-size: 2vw;
+  font-size: 1.5vw;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .form-control {
   height: 60px;
-  font-size: 2vw;
+  font-size: 1vw;
   margin-right: 20px;
   text-align: center;
+}
+
+.main-img {
+  width: 20vw;
 }
 
 @media screen and (max-width: 48rem) {
@@ -103,7 +109,7 @@ body {
     margin-right: 0px;
   }
   .main-img {
-    width: 40vw;
+    width: 20vw;
   }
   .button-reset {
     font-size: 5vw;
