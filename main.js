@@ -61,11 +61,14 @@ function play() {
       "https://media.giphy.com/media/kBZBlLVlfECvOQAVno/giphy.gif";
     resultText.textContent = "정답입니다";
     wellDone = true;
+    playButton.disabled = true;
   }
 
   if (chances < 1) {
     resultText.textContent = "실패했습니다! 리셋 버튼을 눌러 다시 도전하세요";
+    wellDone = true;
     gameOver = true;
+    playButton.disabled = true;
   }
 
   if (gameOver == true) {
